@@ -1,0 +1,12 @@
+trulyquantumchess.adi.fr.eu.org {
+	reverse_proxy localhost:3000 {
+		lb_retries 40
+		lb_try_interval 500ms
+	}
+	log {
+		output file /home/a/hellow.log {
+			roll_size 10MB
+			roll_keep 4
+		}
+	}
+}
