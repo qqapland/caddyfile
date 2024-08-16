@@ -37,3 +37,16 @@ search.adi.fr.eu.org {
 		}
 	}
 }
+
+openai.adi.fr.eu.org {
+	reverse_proxy localhost:8080 {
+		lb_retries 40
+		lb_try_interval 500ms
+	}
+	log {
+		output file /home/a/openai.log {
+			roll_size 10MB
+			roll_keep 4
+		}
+	}
+}
